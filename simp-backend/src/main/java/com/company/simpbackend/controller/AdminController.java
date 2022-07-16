@@ -26,7 +26,7 @@ public class AdminController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/users")
-    @PreAuthorize("hasRole('Admin')")
+//    @PreAuthorize("hasRole('Admin')")
     public User addUserByAdmin(@RequestBody User user) {
         Role role = new Role();
         role.setRoleName("Salesman");
@@ -53,7 +53,7 @@ public class AdminController {
     }
 
     @PutMapping("/users/{id}")
-    @PreAuthorize("hasRole('Admin')")
+//    @PreAuthorize("hasRole('Admin')")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User userDetails) {
         User user = userRepository.findById(id).orElseThrow(() -> new NotFoundException("User with id "+ id +" does not exist."));
 
