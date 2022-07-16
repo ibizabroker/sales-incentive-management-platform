@@ -1,0 +1,21 @@
+<h2>Users List</h2>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Username </th>
+            <th> Role </th>
+            <th> Edit User </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td> {{ user.name }} </td>
+            <td> {{ user.username }} </td>
+            <td> {{ user.role[0].roleName }} </td>
+            <td>
+                <button (click) = "updateUser(user.userId)" class="btn btn-info"> Edit </button> 
+            </td>
+        </tr>
+    </tbody>
+</table>

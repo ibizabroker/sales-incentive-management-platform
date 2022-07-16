@@ -10,6 +10,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { HomeComponent } from './home/home.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     RegisterUserComponent,
     HomeComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
