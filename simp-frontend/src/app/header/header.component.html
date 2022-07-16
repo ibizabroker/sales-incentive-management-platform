@@ -1,0 +1,25 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="color: rgb(79, 163, 163);" href="#">Sales Incentive Management Platform</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+            <li class="nav-item">
+              <a routerLink="/user-list" routerLinkActive="active" class="nav-link" *ngIf="userService.roleMatch(['Admin'])">Salesmen List</a>
+            </li>
+  
+            <li class="nav-item">
+              <a routerLink="/register-user" routerLinkActive="active" class="nav-link" *ngIf="userService.roleMatch(['Admin'])">Register Salesman</a>
+            </li>
+  
+          </ul>
+          <button *ngIf="!isLoggedIn()" type="button" class="btn btn-success" routerLink="/login">Login</button>
+          <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>

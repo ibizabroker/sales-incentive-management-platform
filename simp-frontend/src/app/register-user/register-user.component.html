@@ -1,0 +1,22 @@
+<div class="container col-md-6 offset-mid-3">
+    <h3 class="text-center"> Add Salesman </h3>
+    <form (ngSubmit) = "onSubmit()" autocomplete="off">
+
+        <div class="form-group">
+            <label style="margin-bottom: 10px"> Name </label>
+            <input type="text" class="form-control" style="margin-bottom: 10px" id="name" [(ngModel)] = "user.name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label style="margin-bottom: 10px"> Username </label>
+            <input type="text" class="form-control" style="margin-bottom: 10px" id="username" [(ngModel)] = "user.username" name="username">
+        </div>
+
+        <div class="form-group">
+            <label style="margin-bottom: 10px"> Password </label>
+            <input type="password" class="form-control" style="margin-bottom: 10px" id="password" [(ngModel)] = "user.password" name="password">
+        </div>
+
+        <button class="btn btn-success" type="submit"> Submit </button>
+    </form>
+</div>
