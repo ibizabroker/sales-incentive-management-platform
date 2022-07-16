@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     ForbiddenComponent,
     LoginComponent,
     RegisterUserComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
