@@ -29,9 +29,9 @@ export class LoginComponent implements OnInit {
 
         const role = response.user.role[0].roleName;
         if(role === 'Admin') {
-          this.router.navigate(['/books']);
+          this.router.navigate(['/user-list']); //can update later
         } else {
-          this.router.navigate(['/borrow-book']) //update later
+          this.router.navigate(['/']) //update later
         }
       },
       (error)=>{
