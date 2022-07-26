@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import UserNavbar from './UserNavbar'
 
 export default class SalesComponent extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export default class SalesComponent extends Component {
   render() {
     return (
       <div>
+        <UserNavbar />
                  <h2 className="text-center">Sales Details</h2>
                  <div className = "row">
                     {/* <button className="btn btn-primary" onClick={this.addEmployee}> Add Employee</button> */}
