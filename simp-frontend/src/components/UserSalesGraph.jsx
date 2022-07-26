@@ -12,10 +12,10 @@ export default class UserSalesGraph extends Component {
           
         series: [{
           name: 'Sales',
-          data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+          data: [44, 55, 57, 56, 61, 58, 63]
         }, {
           name: 'Quota',
-          data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+          data: [76, 85, 101, 98, 87, 105, 91]
         }],
         options: {
           chart: {
@@ -38,11 +38,11 @@ export default class UserSalesGraph extends Component {
             colors: ['transparent']
           },
           xaxis: {
-            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
           },
           yaxis: {
             title: {
-              text: '$ (thousands)'
+              text: 'Value'
             }
           },
           fill: {
@@ -51,7 +51,7 @@ export default class UserSalesGraph extends Component {
           tooltip: {
             y: {
               formatter: function (val) {
-                return "$ " + val + " thousands"
+                return val + " thousands"
               }
             }
           }
@@ -64,7 +64,7 @@ export default class UserSalesGraph extends Component {
         return (
             <div>
                 <UserNavbar />
-                <div id="chart">
+                <div id="chart" className='container mt-5'>
                     <ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={350} />
                 </div>
             </div>
