@@ -15,11 +15,12 @@ export default class SalesComponent extends Component {
     return (
       <div>
         <UserNavbar />
+        <div className='container'>
                  <h2 className="text-center">Sales Details</h2>
-                 <div className = "row">
-                    {/* <button className="btn btn-primary" onClick={this.addEmployee}> Add Employee</button> */}
+                 {/* <div className = "row">
+                    <button className="btn btn-primary" onClick={this.addEmployee}> Add Employee</button>
                  </div>
-                 <br></br>
+                 <br></br> */}
                  <div className = "row">
                         <table className = "table table-striped table-bordered">
 
@@ -58,6 +59,7 @@ export default class SalesComponent extends Component {
                         </table>
 
                  </div>
+                </div>
 
             </div>
 
