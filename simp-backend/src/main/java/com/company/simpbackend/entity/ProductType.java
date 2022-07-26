@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class ProductType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer pTypeId;
+    private Integer productTypeId;
     private String pType;
 
 }
