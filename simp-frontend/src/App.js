@@ -1,10 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import FooterComponent from './components/FooterComponent';
+import HeaderComponent from './components/HeaderComponent';
+import SalesComponent from './components/SalesComponent';
 
 function App() {
   return (
-    <div className="container">
-      <h1>Hello gyuzz</h1>
+    <div>
+      <HeaderComponent/>
+      <div className="container">
+        <SalesComponent />
+      </div>
+      
+      <FooterComponent />
     </div>
   );
 }
