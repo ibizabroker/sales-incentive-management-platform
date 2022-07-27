@@ -10,7 +10,7 @@ import SalesComponent from './components/SalesComponent';
 import Usersales from './components/Usersales';
 import UserSalesGraph from './components/UserSalesGraph';
 import AdminNavbar from './components/AdminNavbar';
-import MyCharts from './components/UserChart';
+// import MyCharts from './components/UserChart';
 
 export default function App() {
   return (
