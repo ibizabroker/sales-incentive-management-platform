@@ -16,6 +16,8 @@ public class UserCommission {
 	
 	private String month;
 	
+	private int userQuota;
+	
 	
 	
 
