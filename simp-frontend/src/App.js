@@ -24,7 +24,7 @@ export default function App() {
         <Route path='/user/allsales' exact element={<SalesComponent/>} />
         <Route path='/user/showgraph' exact element={<UserSalesGraph/>} />
         <Route path='/user' exact element={<UserNavbar/>} />
-        <Route path='/user/check' exact element={<MyCharts/>} />
+        {/* <Route path='/user/check' exact element={<MyCharts/>} /> */}
         <Route path='/admin' exact element={<AdminNavbar/>} />
       </Routes>
 
