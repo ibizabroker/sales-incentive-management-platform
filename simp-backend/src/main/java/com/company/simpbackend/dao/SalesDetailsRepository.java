@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.company.simpbackend.entity.SalesDetails;
+import com.company.simpbackend.entity.UserCommission;
 
 
 @Repository
@@ -29,6 +30,13 @@ public class SalesDetailsRepository extends SimpleJpaRepository<SalesDetails, In
 		System.out.println(q);
 		List<SalesDetails> mysales = q.getResultList();
 		return mysales;
+	}
+
+	public List<UserCommission> getSalesChart(int userId) {
+		Query q = entityManager.createNativeQuery("SELECT * FROM USER_COMMISSION WHERE USER_ID= "+userId,UserCommission.class);
+		System.out.println(q);
+		List<UserCommission> saleschart = q.getResultList();
+		return saleschart;
 	}
 
 }

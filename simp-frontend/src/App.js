@@ -10,6 +10,7 @@ import SalesComponent from './components/SalesComponent';
 import Usersales from './components/Usersales';
 import UserSalesGraph from './components/UserSalesGraph';
 import AdminNavbar from './components/AdminNavbar';
+import MyCharts from './components/UserChart';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path='/user/allsales' exact element={<SalesComponent/>} />
         <Route path='/user/showgraph' exact element={<UserSalesGraph/>} />
         <Route path='/user' exact element={<UserNavbar/>} />
+        <Route path='/user/check' exact element={<MyCharts/>} />
         <Route path='/admin' exact element={<AdminNavbar/>} />
       </Routes>
 
