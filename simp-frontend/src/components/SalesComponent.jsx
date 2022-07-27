@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import UserService from '../services/UserService'
 import UserNavbar from './UserNavbar'
 
 export default class SalesComponent extends Component {
@@ -11,11 +12,16 @@ export default class SalesComponent extends Component {
     }
     
 }
+componentDidMount(){
+    UserService.getSalesDetails().then((res) => {
+      this.setState({salesdetails: res.data})
+    });
+}
   render() {
     return (
       <div>
         <UserNavbar />
-        <div className='container'>
+        <div className='container mt-4'>
                  <h2 className="text-center">Sales Details</h2>
                  {/* <div className = "row">
                     <button className="btn btn-primary" onClick={this.addEmployee}> Add Employee</button>
@@ -27,12 +33,12 @@ export default class SalesComponent extends Component {
                             <thead>
                                 <tr>
                                 
-                                    <th> Sales Id </th>
-                                    <th> Product Id </th>
-                                    <th> User Id</th>
-                                    <th> Product Name</th>
-                                    <th> Product Type</th>
+                                    {/* <th> Sales Id </th> */}
+                                    <th>User Id</th>
                                     <th> Month</th>
+                                    <th> Product Type</th>
+                                    <th> Product Id</th> 
+                                    <th>Product Name </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,17 +47,13 @@ export default class SalesComponent extends Component {
                                     this.state.salesdetails.map(
                                         sales => 
                                         <tr key = {sales.salesId}>
-                                             <td> {sales.pId} </td>   
-                                             <td> {sales.userId}</td>
-                                             <td> {sales.pName}</td>
-                                             <td> {sales.pType}</td>
+                                             <td> {sales.userId} </td>   
                                              <td> {sales.transactionMonth}</td>
+                                             <td> {sales.ptype}</td>
+                                             <td> {sales.pid}</td>
+                                             <td> {sales.pname}</td>
                                              
-                                             <td>
-                                                 {/* <button onClick={ () => this.editEmployee(employee.id)} className="btn btn-info">Update </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.viewEmployee(employee.id)} className="btn btn-info">View </button> */}
-                                             </td>
+                                             
                                         </tr>
                                     )
                                 }
