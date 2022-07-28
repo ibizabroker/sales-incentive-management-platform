@@ -1,0 +1,5 @@
+salesId,pId,userId,pName,pType,transactionMonth
+1,1,2,Honda,2 Wheeler,May
+2,3,3,Toyota,4 Wheeler,June
+3,5,1,BMW,4 Wheeler,May
+4,7,5,Bajaj,3 Wheeler,July
