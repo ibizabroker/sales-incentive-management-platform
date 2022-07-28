@@ -10,7 +10,7 @@ export default function UploadsalesData() {
   return (
     <div>
       <AdminNavbar />
-      <h1 className="text-center">Import Sales Data</h1>
+      <h1 className="text-center mt-4">Import Sales Data</h1>
       <div
         className={`container custom-container-upload-sales text-center ${highlighted ? "border border-success" : "border border-info"}`}
         onDragEnter={() => {
@@ -42,7 +42,7 @@ export default function UploadsalesData() {
       <div className='container mt-3 mb-2' >
         { showTable ?
           <div>  
-          <h2 className="text-center"> Uploaded Sales Details </h2>
+          <h2 className="text-center mb-4"> Uploaded Sales Details </h2>
           <div className = "row">
             <table className = "table table-striped table-bordered">
                 <thead>
