@@ -54,7 +54,7 @@ const MyCharts = () => {
   const options = { //data on the x-axis
   chart: { id: 'bar-chart'},
   xaxis: {
-    categories: ["July"]
+    categories: ["July","August"]
   }
 };
   return (

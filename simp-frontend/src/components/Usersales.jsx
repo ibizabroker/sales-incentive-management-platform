@@ -9,7 +9,7 @@ export default class Usersales extends Component {
     this.state = {
       mySales : [],
       transactionMonth: "",
-      userId: 1
+      userId: 4
     }
 
     this.handleChange = (event) => {
