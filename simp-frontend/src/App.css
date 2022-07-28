@@ -46,3 +46,11 @@
     text-align: center;
     color: white;
   }
+
+  .custom-container-upload-sales {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+  }
