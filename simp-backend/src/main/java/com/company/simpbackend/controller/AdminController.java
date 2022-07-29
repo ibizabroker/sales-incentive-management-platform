@@ -1,8 +1,10 @@
 package com.company.simpbackend.controller;
 
+import com.company.simpbackend.dao.UserCommissionRepository;
 import com.company.simpbackend.dao.UserRepository;
 import com.company.simpbackend.entity.Role;
 import com.company.simpbackend.entity.User;
+import com.company.simpbackend.entity.UserCommission;
 import com.company.simpbackend.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,12 @@ public class AdminController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserCommissionRepository userCommissionRepository;
+    
+    
+    
 
     @PostMapping("/users")
 //    @PreAuthorize("hasRole('Admin')")
@@ -64,5 +72,18 @@ public class AdminController {
         User updatedUser = userRepository.save(user);
         return ResponseEntity.ok(updatedUser);
     }
+    
+    @PutMapping("/update-commission")
+//  @PreAuthorize("hasRole('Admin')")
+  public ResponseEntity<UserCommission> updateUser( Integer userId, String month,  @RequestBody UserCommission commissionDetails) {
+      UserCommission commission = userCommissionRepository.findById(userId).orElseThrow(() -> new NotFoundException("User with id "+ userId +" does not exist."));
+
+      commission.setUserAmount(commissionDetails.getUserAmount());
+
+
+      UserCommission updatedCommission = userCommissionRepository.save(commission);
+      return ResponseEntity.ok(updatedCommission);
+  }
+    
 }
 
