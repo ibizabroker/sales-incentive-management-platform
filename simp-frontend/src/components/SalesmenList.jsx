@@ -1,6 +1,7 @@
 
 import React,{Component} from "react";
 import AdminNavbar from "./AdminNavbar";
+import UserService from '../services/UserService'
 
 export default class SalesmanList extends Component {
     constructor(props) {
@@ -12,6 +13,12 @@ export default class SalesmanList extends Component {
       }
       
   }
+  componentDidMount(){
+    UserService.getSalesMenDetails().then((res) => {
+      this.setState({salesmenlist: res.data})
+    });
+}
+
   render() {
     return (
       <div>
@@ -20,16 +27,16 @@ export default class SalesmanList extends Component {
         
 
         <div className='container mt-3 mb-2' >
-          <h2 className="text-center">User List</h2>
+          <h2 className="text-center">Sales Person List</h2>
           <div className = "row">
                         <table className = "table table-striped table-bordered">
 
                             <thead>
                                 <tr>
-                                    <th> Id</th>
+                                    {/* <th> Id</th> */}
                                     <th> Name</th>
                                     <th> Username</th>
-                                    <th> Role</th>
+                                    <th> UserQuota</th>
                                  
                                 </tr>
                             </thead>
@@ -41,7 +48,7 @@ export default class SalesmanList extends Component {
                                      <tr key = {users.userId}>
                                           <td> {users.name} </td>   
                                           <td> {users.username}</td>
-                                          <td> {users.role}</td>
+                                          <td> {users.userQuota}</td>
                                     
                                      </tr>
                                  )

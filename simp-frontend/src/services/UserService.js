@@ -12,6 +12,13 @@ class UserService {
         return axios.get(`${BASIC_URL}/user/mysales?userId=${userId}&transactionMonth="${transactionMonth}"`);
        
     }
+
+    getSalesMenDetails(){
+        return axios.get(`${BASIC_URL}/admin/users`);
+    }
+    createSalesmen(user){
+        return axios.post(`${BASIC_URL}/admin/users`, user);
+    }
 }
 
 export default new UserService()

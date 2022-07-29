@@ -15,6 +15,7 @@ export default class SalesComponent extends Component {
 componentDidMount(){
     UserService.getSalesDetails().then((res) => {
       this.setState({salesdetails: res.data})
+      
     });
 }
   render() {
