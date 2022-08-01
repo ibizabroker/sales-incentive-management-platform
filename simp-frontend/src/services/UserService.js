@@ -19,6 +19,15 @@ class UserService {
     createSalesmen(user){
         return axios.post(`${BASIC_URL}/admin/users`, user);
     }
+
+    uploadSalesData(salesDetails){
+        return axios.post(`${BASIC_URL}/admin/addsalesdetails`, salesDetails)
+        .catch(err => {
+            console.log("Database connection error");
+            console.log(err);
+            return err;
+        })
+    }
 }
 
 export default new UserService()

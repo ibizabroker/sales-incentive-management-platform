@@ -1,8 +1,10 @@
 package com.company.simpbackend.controller;
 
+import com.company.simpbackend.dao.SalesDetailsRepository;
 import com.company.simpbackend.dao.UserCommissionRepository;
 import com.company.simpbackend.dao.UserRepository;
 import com.company.simpbackend.entity.Role;
+import com.company.simpbackend.entity.SalesDetails;
 import com.company.simpbackend.entity.User;
 import com.company.simpbackend.entity.UserCommission;
 import com.company.simpbackend.exceptions.NotFoundException;
@@ -29,6 +31,9 @@ public class AdminController {
 
     @Autowired
     private UserCommissionRepository userCommissionRepository;
+    
+    @Autowired
+    private SalesDetailsRepository salesDetailsRepository;
     
     
     
@@ -85,5 +90,11 @@ public class AdminController {
       return ResponseEntity.ok(updatedCommission);
   }
     
+    @PostMapping("/addsalesdetails")
+//  @PreAuthorize("hasRole('Admin')")
+    public boolean addSalesDetails(@RequestBody List<SalesDetails> salesDetails){
+    	salesDetailsRepository.saveAll(salesDetails);
+    	return true;
+    }
 }
 
