@@ -66,9 +66,9 @@ export default class Usersales extends Component {
                             <tr key = {sales.salesId}>
                             <td> {sales.userId} </td>   
                             <td> {sales.transactionMonth}</td>
-                            <td> {sales.ptype}</td>
-                            <td> {sales.pid}</td>
-                            <td> {sales.pname}</td>
+                            <td> {sales.pType}</td>
+                            <td> {sales.pId}</td>
+                            <td> {sales.pName}</td>
                         </tr>
                         )
                     }
