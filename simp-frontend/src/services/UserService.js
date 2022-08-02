@@ -28,6 +28,10 @@ class UserService {
             return err;
         })
     }
+
+    updateCommission(userId, month, commission){
+        return axios.put(`${BASIC_URL}/admin/update-commission?userId=${userId}&month="${month}"`, commission)
+    }
 }
 
 export default new UserService()
