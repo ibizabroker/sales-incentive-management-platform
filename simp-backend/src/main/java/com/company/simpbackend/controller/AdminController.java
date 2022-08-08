@@ -105,7 +105,10 @@ public class AdminController {
         CommissionStructure updatedCommissionStructure = commissionStructureRepository.save(structure);
         return ResponseEntity.ok(updatedCommissionStructure);
     }
-
+    @GetMapping("/change-commission-structure")
+    public List<CommissionStructure> getAllCommissions() {
+        return commissionStructureRepository.findAll();
+    }
     @GetMapping("/change-commission-structure/{id}")
     public ResponseEntity<CommissionStructure> getCommissionStructureById(@PathVariable Integer id) {
         CommissionStructure commissionStructure = commissionStructureRepository.findById(id).orElseThrow(() -> new NotFoundException("Commission Structure with id "+ id +" does not exist."));
