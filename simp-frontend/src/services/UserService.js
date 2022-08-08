@@ -38,7 +38,10 @@ class UserService {
     }
     changeCommissionStructure(commission,commissionId){
         return axios.put(BASIC_URL+'/admin/change-commission-structure/'+commissionId,commission);
-       
+    }   
+
+    updateCommission(userId, month, commission){
+        return axios.put(`${BASIC_URL}/admin/update-commission?userId=${userId}&month="${month}"`, commission)
     }
 }
 
