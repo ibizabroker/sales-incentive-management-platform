@@ -18,7 +18,9 @@ export default class AdminNavbar extends Component {
                     <li className="nav-item">
                         <Link to="/admin/upload-salesdata" className="nav-link">Upload Sales Data</Link>
                     </li>
-
+                    <li className="nav-item">
+                        <Link to="/admin/commissionList" className="nav-link">Commission Structure</Link>
+                    </li>
                     <li className="nav-item">
                         <Link to="/admin/change-commission" className="nav-link">Change Commission Structure</Link>
                     </li>

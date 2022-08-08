@@ -28,6 +28,18 @@ class UserService {
             return err;
         })
     }
+    getCommissionStructure(commissionId){
+        return axios.get(BASIC_URL+'/admin/change-commission-structure/'+commissionId);
+       
+    }
+    getAllCommissionStructure(commissionId){
+        return axios.get(BASIC_URL+'/admin/change-commission-structure/');
+       
+    }
+    changeCommissionStructure(commission,commissionId){
+        return axios.put(BASIC_URL+'/admin/change-commission-structure/'+commissionId,commission);
+       
+    }
 }
 
 export default new UserService()
