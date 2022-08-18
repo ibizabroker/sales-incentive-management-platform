@@ -3,7 +3,11 @@ import axios from 'axios';
 const BASIC_URL = "http://localhost:8080"
 
 class UserService {
-     
+    
+    authenticate(loginDetails){
+        return axios.post(`${BASIC_URL}/authenticate`, loginDetails);
+    }
+
     getSalesDetails(){
         return axios.get(`${BASIC_URL}/user/allsales`);
     }
