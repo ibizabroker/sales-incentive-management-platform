@@ -14,7 +14,6 @@ import SalesmanList from './components/SalesmenList';
 import AddSalesman from './components/AddSalesman';
 // import MyCharts from './components/UserChart';
 import UploadsalesData from './components/UploadSalesData';
-import ChangeCommissionStructure from './components/ChangeCommissionStructure';
 import ForcedCommissionCalculation from './components/ForcedCommissionCalculation';
 import CommissionStructureList from './components/CommissionStructureList';
 import UpdateCommissionStructure from './components/UpdateCommissionStructure';
@@ -37,7 +36,6 @@ export default function App() {
         <Route path='/admin/add-salesman' exact element={<AddSalesman/>} />
         <Route path='/admin/upload-salesdata' exact element={<UploadsalesData/>} />
         <Route path='/admin/commissionList' exact element={<CommissionStructureList/>} />
-        <Route path='/admin/change-commission' exact element={<ChangeCommissionStructure/>} />
         <Route path='/admin/forced-calculation' exact element={<ForcedCommissionCalculation/>} />
         <Route path='/admin/updateCommission/:commissionId' exact element={<UpdateCommissionStructure/>} />
       </Routes>
