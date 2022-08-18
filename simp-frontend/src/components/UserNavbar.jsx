@@ -18,8 +18,17 @@ export default class UserNavbar extends Component {
                     <li className="nav-item">
                         <Link to="/user/showgraph" className="nav-link">Show Graph</Link>
                     </li>
+
                 </ul>
             </div>
+
+            {/* <div>
+                <ul>
+                    <li className="nav-item float-right">
+                        <Link to="/" className="nav-link">Log Out</Link>
+                    </li>
+                </ul>
+            </div> */}
         </nav>
     )
   }
