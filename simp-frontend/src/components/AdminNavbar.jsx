@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 export default class AdminNavbar extends Component {
   render() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-            <div className=" text-center" id="navbarText">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div>
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
                         <Link to="/admin/salesmen-list" className="nav-link">Salesmen List</Link>
@@ -23,6 +23,13 @@ export default class AdminNavbar extends Component {
                     </li>
                     <li className="nav-item">
                         <Link to="/admin/forced-calculation" className="nav-link">Forced Commission Calculation</Link>
+                    </li>
+                </ul>
+            </div>
+            <div className='collapse navbar-collapse justify-content-end'>
+                <ul className='navbar-nav ml-auto'>
+                    <li className="nav-item">
+                        <Link to="/" className="nav-link">Log Out</Link>
                     </li>
                 </ul>
             </div>
