@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UserService from '../services/UserService';
 import AdminNavbar from './AdminNavbar';
 import { withRouter } from '../services/withRouter';
+
 class CommissionStructureList extends Component {
   constructor(props){
     super(props)
