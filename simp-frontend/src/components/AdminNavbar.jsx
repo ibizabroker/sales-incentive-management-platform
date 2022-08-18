@@ -22,10 +22,6 @@ export default class AdminNavbar extends Component {
                         <Link to="/admin/commissionList" className="nav-link">Commission Structure</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/admin/change-commission" className="nav-link">Change Commission Structure</Link>
-                    </li>
-
-                    <li className="nav-item">
                         <Link to="/admin/forced-calculation" className="nav-link">Forced Commission Calculation</Link>
                     </li>
                 </ul>
