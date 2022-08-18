@@ -57,29 +57,29 @@ class UpdateCommissionStructure extends Component {
     render() {
     return (
         <div>
-           <div className = "container">
+           <div className = "container mt-5">
                 <div className = "row">
-                    <div className = "card col-md-6 offset-md-3 offset-md-3">
-                        <h3 className="text-center">Update Commission Structure</h3>
+                    <div className = "card col-md-6 offset-md-3 offset-md-3 mt-2">
+                        <h3 className="text-center mt-4">Update Commission Structure</h3>
                         <div className = "card-body">
                             <form>
                                 <div className = "form-group">
                                     <label> Upper Limit: </label>
-                                    <input placeholder="Upper Limit" name="upperlimit" className="form-control" 
+                                    <input placeholder="Upper Limit" name="upperlimit" className="form-control mt-2" 
                                         value={this.state.endRange} onChange={this.changeendRangeHandler}/>
                                 </div>
-                                <div className = "form-group">
+                                <div className = "form-group mt-3">
                                     <label> Lower Limit: </label>
-                                    <input placeholder="Lower Limit" name="lowerlimit" className="form-control" 
+                                    <input placeholder="Lower Limit" name="lowerlimit" className="form-control mt-2" 
                                         value={this.state.startRange} onChange={this.changestartRangeHandler}/>
                                 </div>
-                                <div className = "form-group">
+                                <div className = "form-group mt-3">
                                     <label> Commsission Percentage: </label>
-                                    <input placeholder="Commission Percentage" name="commissionPercentage" className="form-control" 
+                                    <input placeholder="Commission Percentage" name="commissionPercentage" className="form-control mt-2" 
                                         value={this.state.commissionPercentage} onChange={this.changeCommissionPercentageHandler}/>
                                 </div>
 
-                                <button className="btn btn-success" onClick={this.updateCommissionStructure}>Save</button>
+                                <button className="btn btn-success mt-3" onClick={this.updateCommissionStructure}>Save</button>
                                 
                             </form>
                         </div>
@@ -92,4 +92,4 @@ class UpdateCommissionStructure extends Component {
     )
   }
 }
-export default  withRouter(UpdateCommissionStructure)
+export default withRouter(UpdateCommissionStructure)

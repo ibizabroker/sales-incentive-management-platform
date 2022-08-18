@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import UserService from '../services/UserService'
-// import { useHistory } from "react-router-dom";
+import { withRouter } from '../services/withRouter';
 import AdminNavbar from './AdminNavbar'
 
-export default class AddSalesman extends Component {
+class AddSalesman extends Component {
 
     constructor(props) {
         super(props)
@@ -27,11 +27,9 @@ export default class AddSalesman extends Component {
         let user = {name: this.state.name, username: this.state.username, password: this.state.password, userQuota: this.state.userQuota};
         console.log('user=> ' + JSON.stringify(user));
 
-   
-        //    let history = useHistory();
-            UserService.createSalesmen(user).then(res =>{
-                // this.history.push('/admin/salesmen-list');
-            });
+        UserService.createSalesmen(user).then(res =>{
+            this.props.router.navigate('/admin/salesmen-list');
+        });
         
     }
 
@@ -97,3 +95,5 @@ export default class AddSalesman extends Component {
     )
   }
 }
+
+export default withRouter(AddSalesman);
