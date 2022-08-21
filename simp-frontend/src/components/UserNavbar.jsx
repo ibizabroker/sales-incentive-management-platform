@@ -18,6 +18,9 @@ export default class UserNavbar extends Component {
                     <li className="nav-item">
                         <Link to="/user/showgraph" className="nav-link">Show Graph</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="/user/mycommission" className="nav-link"> Commission </Link>
+                    </li>
                 </ul>
             </div>
             <div className='collapse navbar-collapse justify-content-end'>

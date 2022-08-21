@@ -39,4 +39,11 @@ public class SalesDetailsRepository extends SimpleJpaRepository<SalesDetails, In
 		return saleschart;
 	}
 
+	public List<UserCommission> getMyCommission(Integer userId) {
+		Query q = entityManager.createNativeQuery("SELECT * FROM USER_COMMISSION WHERE USER_ID= "+userId,UserCommission.class);
+		System.out.println(q);
+		List<UserCommission> salesCommission= q.getResultList();
+		return salesCommission;
+	}
+
 }

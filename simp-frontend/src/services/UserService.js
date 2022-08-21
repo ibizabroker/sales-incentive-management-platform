@@ -20,6 +20,7 @@ class UserService {
     getSalesMenDetails(){
         return axios.get(`${BASIC_URL}/admin/users`);
     }
+
     createSalesmen(user){
         return axios.post(`${BASIC_URL}/admin/users`, user);
     }
@@ -46,6 +47,9 @@ class UserService {
 
     updateCommission(userId, month, commission){
         return axios.put(`${BASIC_URL}/admin/update-commission?userId=${userId}&month="${month}"`, commission)
+    }
+    getUserCommissionDetail(userId){
+        return axios.get(`${BASIC_URL}/user/mycommission?userId=${userId}`);
     }
 }
 
