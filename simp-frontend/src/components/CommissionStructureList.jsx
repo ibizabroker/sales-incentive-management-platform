@@ -28,7 +28,7 @@ class CommissionStructureList extends Component {
         <div>
         <AdminNavbar />
 
-        <div className='container mt-4'>
+        <div className='container mt-4 mb-5'>
         <h2 className="text-center">Commission Structure</h2>
         <div className = "row">
                <table className = "table table-striped table-bordered">

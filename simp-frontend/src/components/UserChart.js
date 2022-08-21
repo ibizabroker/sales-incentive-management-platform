@@ -28,7 +28,8 @@ const MyCharts = () => {
 
   useEffect(() => {
     const getData = async () => {
-    const url = 'http://localhost:8080/user/saleschart?userId=1';
+    const userId = JSON.parse(window.localStorage.getItem('user')).userId   
+    const url = `http://localhost:8080/user/saleschart?userId=${userId}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -54,7 +55,7 @@ const MyCharts = () => {
   const options = { //data on the x-axis
   chart: { id: 'bar-chart'},
   xaxis: {
-    categories: ["July","August"]
+    categories: ["May","August"]
   }
 };
   return (
