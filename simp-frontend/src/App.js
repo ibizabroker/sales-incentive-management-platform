@@ -17,6 +17,7 @@ import UploadsalesData from './components/UploadSalesData';
 import ForcedCommissionCalculation from './components/ForcedCommissionCalculation';
 import CommissionStructureList from './components/CommissionStructureList';
 import UpdateCommissionStructure from './components/UpdateCommissionStructure';
+import UserCommission from './components/UserCommission';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route path='/user/allsales' exact element={<SalesComponent/>} />
         <Route path='/user/showgraph' exact element={<UserSalesGraph/>} />
         <Route path='/user' exact element={<UserNavbar/>} />
+        <Route path='/user/mycommission' exact element={<UserCommission/>} />
         {/* <Route path='/user/check' exact element={<MyCharts/>} /> */}
         <Route path='/admin' exact element={<AdminNavbar/>} />
         <Route path='/admin/salesmen-list' exact element={<SalesmanList/>} />

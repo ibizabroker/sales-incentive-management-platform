@@ -38,10 +38,10 @@ class LogIn extends Component {
                 console.log((window.localStorage.getItem('jwtToken')));
 
                 if(roleName==='Admin'){
-                    this.props.router.navigate(`/admin`);
+                    this.props.router.navigate(`/admin/salesmen-list`);
                 }
                 else{
-                    this.props.router.navigate(`/user`);
+                    this.props.router.navigate(`/user/allsales`);
                 }
             })
             .catch(err => console.log(err))

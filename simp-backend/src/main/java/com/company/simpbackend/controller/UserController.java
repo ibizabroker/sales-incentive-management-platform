@@ -36,5 +36,10 @@ public class UserController {
     public List<UserCommission> getSalesChart(int userId) {
         return salesdetailsRepository.getSalesChart(userId);
     }
+	
+	@GetMapping("/mycommission")
+    public List<UserCommission> getMyCommission(Integer userId) {
+        return salesdetailsRepository.getMyCommission(userId);
+    }
 
 }
