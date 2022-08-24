@@ -90,6 +90,14 @@ public class AdminController {
 //  @PreAuthorize("hasRole('Admin')")
     public boolean addSalesDetails(@RequestBody List<SalesDetails> salesDetails){
     	salesDetailsRepository.saveAll(salesDetails);
+        System.out.println(salesDetails);
+        userCommissionRepository.addUserCommission();
+        userCommissionRepository.updateCommissionPercentage();
+        userCommissionRepository.updateUserAmount();
+//        System.out.println(userCommissionRepository.addUserCommission());
+//        List<UserCommission> userCommissions = userCommissionRepository.addUserCommission();
+//        userCommissionRepository.saveAll(userCommissions);
+//        System.out.println(userCommissions);
     	return true;
     }
 
@@ -114,4 +122,10 @@ public class AdminController {
         CommissionStructure commissionStructure = commissionStructureRepository.findById(id).orElseThrow(() -> new NotFoundException("Commission Structure with id "+ id +" does not exist."));
         return ResponseEntity.ok(commissionStructure);
     }
+
+//    @PostMapping("/uploadusercommission")
+//    public List<UserCommission> addUserCommission() {
+//        userCommissionRepository.saveAll(userCommissionRepository.addUserCommission());
+//        return userCommissionRepository.addUserCommission();
+//    }
 }
