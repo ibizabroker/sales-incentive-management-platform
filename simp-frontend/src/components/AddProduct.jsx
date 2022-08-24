@@ -35,6 +35,7 @@ class AddProduct extends Component {
     }
 
     changeTypeHandler= (event) => {
+        event.preventDefault();
         this.setState({pType: event.target.value});
     }
 
@@ -51,7 +52,7 @@ class AddProduct extends Component {
                         <div className = "card col-md-6 offset-md-3 offset-md-3 mt-2">
                             <h3 className="text-center mt-4">Add Product</h3>
                             <div className = "card-body">
-                                <form>
+                                <form autocomplete="off">
 
                                     <div className = "form-group">
                                         <label> Name: </label>
@@ -61,13 +62,18 @@ class AddProduct extends Component {
 
                                     <div className = "form-group mt-3">
                                         <label> Type: </label>
-                                        <input placeholder="Product Type" name="type" className="form-control mt-2" 
-                                            value={this.state.pType} onChange={this.changeTypeHandler}/>
+                                        <select className='form-control mt-2' value={this.state.pType} onChange={this.changeTypeHandler}>
+                                            <option disabled={true} value={''}> Select an option </option>
+                                            <option value={'2 Wheeler'}>2 Wheeler</option>
+                                            <option value={'3 Wheeler'}>3 Wheeler</option>
+                                            <option value={'4 Wheeler'}>4 Wheeler</option>
+                                            <option value={'Commercial Vehicle'}>Commercial Vehicle</option>
+                                        </select>
                                     </div>
 
                                     <div className = "form-group mt-3">
                                         <label> Cost: </label>
-                                        <input placeholder="Product Cost" name="cost" className="form-control mt-2" 
+                                        <input type="number" placeholder="Product Cost" name="cost" className="form-control mt-2" 
                                             value={this.state.pCost} onChange={this.changeCostHandler}/>
                                     </div>
 
