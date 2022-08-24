@@ -9,7 +9,7 @@ export default class ForcedCommissionCalculation extends Component {
         this.state = {
           userId: null,
           userAmount : 0,
-          month: ""
+          transactionMonth: ""
         }
     
         this.handleUserIdChange = (event) => {
@@ -20,7 +20,7 @@ export default class ForcedCommissionCalculation extends Component {
 
         this.handleMonthChange = (event) => {
             this.setState({
-              month: event.target.value
+                transactionMonth: event.target.value
             })
         }
 
@@ -32,8 +32,8 @@ export default class ForcedCommissionCalculation extends Component {
 
         this.saveCommisssion = (event) => {
             event.preventDefault();
-            const commission = {userId: this.state.userId, month: this.state.month, userAmount: this.state.userAmount};
-            UserService.updateCommission(this.state.userId, this.state.month, commission)
+            const commission = {userId: this.state.userId, transactionMonth: this.state.transactionMonth, userAmount: this.state.userAmount};
+            UserService.updateCommission(this.state.userId, this.state.transactionMonth, commission)
             .then((res) => {
                 // console.log(res.data);
                 alert(`Commission updated for user id: ${this.state.userId}`);
@@ -68,9 +68,9 @@ export default class ForcedCommissionCalculation extends Component {
                         
                     </div> 
                     <div className="row mb-3">
-                        <label className="col-sm-2 col-form-label">Month :</label>
+                        <label className="col-sm-2 col-form-label">Month:</label>
                         <div className="col-sm-4">
-                            <input type="month" className ="form-control" id = "month"  name="month" onChange={this.handleMonthChange}/>
+                            <input type="month" className ="form-control" id = "transactionMonth"  name="transactionMonth" onChange={this.handleMonthChange}/>
                         </div>
                         
                     </div> 
