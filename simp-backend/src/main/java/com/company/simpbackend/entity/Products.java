@@ -18,4 +18,35 @@ public class Products {
     private Integer pCost;
     private String pType;
 
+    public Integer getpId() {
+        return pId;
+    }
+
+    public void setpId(Integer pId) {
+        this.pId = pId;
+    }
+
+    public String getpName() {
+        return pName;
+    }
+
+    public void setpName(String pName) {
+        this.pName = pName;
+    }
+
+    public Integer getpCost() {
+        return pCost;
+    }
+
+    public void setpCost(Integer pCost) {
+        this.pCost = pCost;
+    }
+
+    public String getpType() {
+        return pType;
+    }
+
+    public void setpType(String pType) {
+        this.pType = pType;
+    }
 }

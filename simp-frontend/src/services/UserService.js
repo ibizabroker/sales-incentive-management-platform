@@ -37,7 +37,7 @@ class UserService {
         return axios.get(BASIC_URL+'/admin/change-commission-structure/'+commissionId);
        
     }
-    getAllCommissionStructure(commissionId){
+    getAllCommissionStructure(){
         return axios.get(BASIC_URL+'/admin/change-commission-structure/');
        
     }
@@ -50,6 +50,14 @@ class UserService {
     }
     getUserCommissionDetail(userId){
         return axios.get(`${BASIC_URL}/user/mycommission?userId=${userId}`);
+    }
+
+    addProduct(product) {
+        return axios.post(`${BASIC_URL}/admin/products`, product);
+    }
+
+    getAllProducts() {
+        return axios.get(`${BASIC_URL}/admin/products`);
     }
 }
 

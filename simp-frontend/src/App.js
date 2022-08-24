@@ -18,6 +18,8 @@ import ForcedCommissionCalculation from './components/ForcedCommissionCalculatio
 import CommissionStructureList from './components/CommissionStructureList';
 import UpdateCommissionStructure from './components/UpdateCommissionStructure';
 import UserCommission from './components/UserCommission';
+import ProductsList from './components/ProductsList';
+import AddProduct from './components/AddProduct';
 
 export default function App() {
   return (
@@ -40,6 +42,8 @@ export default function App() {
         <Route path='/admin/commissionList' exact element={<CommissionStructureList/>} />
         <Route path='/admin/forced-calculation' exact element={<ForcedCommissionCalculation/>} />
         <Route path='/admin/updateCommission/:commissionId' exact element={<UpdateCommissionStructure/>} />
+        <Route path='/admin/products-list' exact element={<ProductsList/>} />
+        <Route path='/admin/add-product' exact element={<AddProduct/>} />
       </Routes>
 
       <FooterComponent />

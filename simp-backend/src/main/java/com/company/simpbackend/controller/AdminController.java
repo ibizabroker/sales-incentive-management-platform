@@ -1,9 +1,6 @@
 package com.company.simpbackend.controller;
 
-import com.company.simpbackend.dao.CommissionStructureRepository;
-import com.company.simpbackend.dao.SalesDetailsRepository;
-import com.company.simpbackend.dao.UserCommissionRepository;
-import com.company.simpbackend.dao.UserRepository;
+import com.company.simpbackend.dao.*;
 import com.company.simpbackend.entity.*;
 import com.company.simpbackend.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +31,9 @@ public class AdminController {
     
     @Autowired
     private CommissionStructureRepository commissionStructureRepository;
+
+    @Autowired
+    private ProductsRepository productsRepository;
 
     @PostMapping("/users")
 //    @PreAuthorize("hasRole('Admin')")
@@ -123,9 +123,16 @@ public class AdminController {
         return ResponseEntity.ok(commissionStructure);
     }
 
-//    @PostMapping("/uploadusercommission")
-//    public List<UserCommission> addUserCommission() {
-//        userCommissionRepository.saveAll(userCommissionRepository.addUserCommission());
-//        return userCommissionRepository.addUserCommission();
-//    }
+    @PostMapping("/products")
+//    @PreAuthorize("hasRole('Admin')")
+    public Products addProduct(@RequestBody Products product) {
+        productsRepository.save(product);
+        return product;
+    }
+
+    @GetMapping("/products")
+//    @PreAuthorize("hasRole('Admin')")
+    public List<Products> getAllProducts() {
+        return productsRepository.findAll();
+    }
 }
