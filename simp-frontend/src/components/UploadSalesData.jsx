@@ -91,7 +91,7 @@ export default function UploadsalesData() {
                 </tbody>
             </table>
           </div>
-            <div className="d-grid gap-2 col-2 mx-auto">
+            <div className="d-grid gap-2 col-2 mb-5 mx-auto">
               <button className = "btn btn-primary center" type ="submit" onClick={handleSubmit}>Upload Details To Backend</button>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function UploadsalesData() {
 
       {
         success ?
-        <div className='container d-flex align-items-center justify-content-center mt-3 mb-2'>
+        <div className='container d-flex align-items-center justify-content-center mt-3 mb-4'>
           <button className='btn btn-success'>Sales Details stored successfully</button>
         </div>
         : null
@@ -108,7 +108,7 @@ export default function UploadsalesData() {
 
       {
         failure ?
-        <div className='container d-flex align-items-center justify-content-center mt-3 mb-2'>
+        <div className='container d-flex align-items-center justify-content-center mt-3 mb-4'>
           <button className='btn btn-danger'>Failed to store sales details. Try again</button>
         </div>
         : null

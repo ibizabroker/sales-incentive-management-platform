@@ -1,5 +1,5 @@
-salesId,pId,userId,pName,pType,transactionMonth
-1,1,4,Honda,2 Wheeler,2022-05
-2,3,3,Toyota,4 Wheeler,2022-06
-3,5,1,BMW,4 Wheeler,2022-05
-4,7,5,Bajaj,3 Wheeler,2022-06
+pId,userId,pName,pType,transactionMonth
+1,4,Honda,2 Wheeler,2022-05
+3,3,Toyota,4 Wheeler,2022-06
+5,1,BMW,4 Wheeler,2022-05
+7,5,Bajaj,3 Wheeler,2022-06

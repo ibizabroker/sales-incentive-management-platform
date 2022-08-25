@@ -37,7 +37,7 @@ class UserService {
         return axios.get(BASIC_URL+'/admin/change-commission-structure/'+commissionId);
        
     }
-    getAllCommissionStructure(commissionId){
+    getAllCommissionStructure(){
         return axios.get(BASIC_URL+'/admin/change-commission-structure/');
        
     }
@@ -45,11 +45,19 @@ class UserService {
         return axios.put(BASIC_URL+'/admin/change-commission-structure/'+commissionId,commission);
     }   
 
-    updateCommission(userId, month, commission){
-        return axios.put(`${BASIC_URL}/admin/update-commission?userId=${userId}&month="${month}"`, commission)
+    updateCommission(userId, transactionMonth, commission){
+        return axios.put(`${BASIC_URL}/admin/update-commission?userId=${userId}&transactionMonth="${transactionMonth}"`, commission)
     }
     getUserCommissionDetail(userId){
         return axios.get(`${BASIC_URL}/user/mycommission?userId=${userId}`);
+    }
+
+    addProduct(product) {
+        return axios.post(`${BASIC_URL}/admin/products`, product);
+    }
+
+    getAllProducts() {
+        return axios.get(`${BASIC_URL}/admin/products`);
     }
 }
 

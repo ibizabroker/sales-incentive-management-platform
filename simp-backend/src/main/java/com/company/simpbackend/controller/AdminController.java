@@ -1,9 +1,6 @@
 package com.company.simpbackend.controller;
 
-import com.company.simpbackend.dao.CommissionStructureRepository;
-import com.company.simpbackend.dao.SalesDetailsRepository;
-import com.company.simpbackend.dao.UserCommissionRepository;
-import com.company.simpbackend.dao.UserRepository;
+import com.company.simpbackend.dao.*;
 import com.company.simpbackend.entity.*;
 import com.company.simpbackend.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +31,9 @@ public class AdminController {
     
     @Autowired
     private CommissionStructureRepository commissionStructureRepository;
+
+    @Autowired
+    private ProductsRepository productsRepository;
 
     @PostMapping("/users")
 //    @PreAuthorize("hasRole('Admin')")
@@ -77,7 +77,7 @@ public class AdminController {
 
     @PutMapping("/update-commission")
 //  @PreAuthorize("hasRole('Admin')")
-    public ResponseEntity<UserCommission> updateUser( Integer userId, String month,  @RequestBody UserCommission commissionDetails) {
+    public ResponseEntity<UserCommission> updateUser( Integer userId, String transactionMonth,  @RequestBody UserCommission commissionDetails) {
         UserCommission commission = userCommissionRepository.findById(userId).orElseThrow(() -> new NotFoundException("User with id "+ userId +" does not exist."));
 
         commission.setUserAmount(commissionDetails.getUserAmount());
@@ -90,6 +90,14 @@ public class AdminController {
 //  @PreAuthorize("hasRole('Admin')")
     public boolean addSalesDetails(@RequestBody List<SalesDetails> salesDetails){
     	salesDetailsRepository.saveAll(salesDetails);
+        System.out.println(salesDetails);
+        userCommissionRepository.addUserCommission();
+        userCommissionRepository.updateCommissionPercentage();
+        userCommissionRepository.updateUserAmount();
+//        System.out.println(userCommissionRepository.addUserCommission());
+//        List<UserCommission> userCommissions = userCommissionRepository.addUserCommission();
+//        userCommissionRepository.saveAll(userCommissions);
+//        System.out.println(userCommissions);
     	return true;
     }
 
@@ -113,5 +121,18 @@ public class AdminController {
     public ResponseEntity<CommissionStructure> getCommissionStructureById(@PathVariable Integer id) {
         CommissionStructure commissionStructure = commissionStructureRepository.findById(id).orElseThrow(() -> new NotFoundException("Commission Structure with id "+ id +" does not exist."));
         return ResponseEntity.ok(commissionStructure);
+    }
+
+    @PostMapping("/products")
+//    @PreAuthorize("hasRole('Admin')")
+    public Products addProduct(@RequestBody Products product) {
+        productsRepository.save(product);
+        return product;
+    }
+
+    @GetMapping("/products")
+//    @PreAuthorize("hasRole('Admin')")
+    public List<Products> getAllProducts() {
+        return productsRepository.findAll();
     }
 }

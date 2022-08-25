@@ -9,7 +9,6 @@ export default class UserCommission extends Component {
         this.state = {
           usercommission : [],
           userId:JSON.parse(window.localStorage.getItem('user')).userId
-        
         }
         
     }
@@ -24,10 +23,7 @@ export default class UserCommission extends Component {
       
     return (
         <div>
-          <UserNavbar />
-          
-          
-  
+          <UserNavbar />  
           <div className='container mt-3 mb-2' >
             <h2 className="text-center">Commission</h2>
             <div className = "row">
@@ -38,33 +34,23 @@ export default class UserCommission extends Component {
                                       {/* <th> Id</th> */}
                                       <th>Month</th>
                                       <th>Commission</th>
-                                      
-                                     
-                                   
                                   </tr>
                               </thead>
                               <tbody>
-                              {
-                                   
+                              {                                   
                                    this.state.usercommission.map(
                                        users => 
                                        <tr key = {users.transactionId}>
-                                            <td> {users.month}</td>
-                                            <td> {users.userAmount} </td>   
-                                           
-                                        
-                                      
+                                            <td> {users.transactionMonth}</td>
+                                            <td> {users.userAmount} </td>                                                                                                                           
                                        </tr>
                                    )
-                               }
-                              </tbody>
-                              
-                          </table>
-  
+                              }
+                              </tbody>                              
+                          </table>  
                    </div>
           </div>
-        </div>
-        
+        </div>        
       )
   }
 }
