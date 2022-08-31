@@ -13,8 +13,7 @@ class UserService {
     }
 
     getMySales(userId, transactionMonth){
-        return axios.get(`${BASIC_URL}/user/mysales?userId=${userId}&transactionMonth="${transactionMonth}"`);
-       
+        return axios.get(`${BASIC_URL}/user/mysales?userId=${userId}&transactionMonth="${transactionMonth}"`);       
     }
 
     getSalesMenDetails(){
@@ -33,21 +32,23 @@ class UserService {
             return err;
         })
     }
+
     getCommissionStructure(commissionId){
-        return axios.get(BASIC_URL+'/admin/change-commission-structure/'+commissionId);
-       
+        return axios.get(BASIC_URL+'/admin/change-commission-structure/'+commissionId);       
     }
+
     getAllCommissionStructure(){
-        return axios.get(BASIC_URL+'/admin/change-commission-structure/');
-       
+        return axios.get(BASIC_URL+'/admin/change-commission-structure/');      
     }
+
     changeCommissionStructure(commission,commissionId){
         return axios.put(BASIC_URL+'/admin/change-commission-structure/'+commissionId,commission);
     }   
 
-    updateCommission(userId, transactionMonth, commission){
-        return axios.put(`${BASIC_URL}/admin/update-commission?userId=${userId}&transactionMonth="${transactionMonth}"`, commission)
+    forcedCommission(userId, transactionMonth, userAmount){
+        return axios.get(`${BASIC_URL}/admin/forced-commission?userId=${userId}&transactionMonth="${transactionMonth}"&userAmount=${userAmount}`);
     }
+
     getUserCommissionDetail(userId){
         return axios.get(`${BASIC_URL}/user/mycommission?userId=${userId}`);
     }
