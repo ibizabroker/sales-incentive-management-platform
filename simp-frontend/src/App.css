@@ -58,3 +58,21 @@
 .addbutton {
   width: 30%;
 }
+
+.login-container{
+  width:300px;
+  max-width:100%;
+  margin:50px auto;
+}
+
+.login-form{
+  padding: 10%;
+  background:#282726;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form h3{
+  text-align: center;
+  margin-bottom:12%;
+  color:#fff;
+}

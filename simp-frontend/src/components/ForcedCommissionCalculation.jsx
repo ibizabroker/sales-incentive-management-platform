@@ -92,37 +92,6 @@ export default class ForcedCommissionCalculation extends Component {
                         </div>
                     </div>
                 </div>
-
-                {/* </div>
-                <div className="container col-sm-6 offset-md-4 mt-5 mb-2">
-                <h2 className="primary text-center"> Forced Commission </h2>
-                <form onSubmit={this.saveCommisssion}>
-
-                    <div className="row mb-3 mt-4">
-                        <label className="col-sm-2 col-form-label">User Id:</label>
-                        <div className="col-sm-4">
-                            <input type="number" className ="form-control" id = "userId"  name="userId" onChange={this.handleUserIdChange}/>
-                        </div>     
-                    </div> 
-
-                    <div className="row mb-3">
-                        <label className="col-sm-2 col-form-label">Month:</label>
-                        <div className="col-sm-4">
-                            <input type="month" className ="form-control" id = "transactionMonth"  name="transactionMonth" onChange={this.handleMonthChange}/>
-                        </div>                        
-                    </div> 
-                    
-                    <div className="row mb-3">
-                        <label className="col-sm-2 col-form-label">Commisson:</label>
-                        <div className="col-sm-4">
-                            <input type="number" className ="form-control" id = "userAmount" name="userAmount" onChange={this.handleCommissionChange}/>
-                        </div>                       
-                    </div>
-                    
-                    <button className = "btn btn-primary col-sm-6" type='submit'>Update</button>
-            
-                </form>
-                </div> */}
             </div>
         )
     }

@@ -51,27 +51,29 @@ class LogIn extends Component {
 
     render() {
         return (
-            <div className=" container col-sm-6 offset-md-4 mt-5 mb-2">
-                <h2 className="primary"> Login Page </h2>
-                <form onSubmit={this.handleSubmit}>
-
-                    <div className="row mb-3">
-                        <label className="col-sm-2 col-form-label">Username:</label>
-                        <div className="col-sm-4">
-                            <input type="text" onChange={this.changeUsernameHandler} className ="form-control" id = "username"  name="username" />
-                        </div>
-                        
-                    </div> 
-                    <div className="row mb-3">
-                        <label className="col-sm-2 col-form-label">Password:</label>
-                        <div className="col-sm-4">
-                            <input type="password" onChange={this.changePasswordHandler} className ="form-control" id = "password" name="password" />
-                        </div>
-                        
+            <div className="login-container">
+                <div className="row">
+                    <div className="col-md-12 login-form">
+                        <h3>Login</h3>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="row mb-3">
+                                <div className="col-md-12 form-group">
+                                <input type="text" className="form-control" placeholder="Username" onChange={this.changeUsernameHandler} />
+                                </div>
+                            </div>
+                            <div className="row mb-3">
+                                <div className="col-md-12 form-group">
+                                <input type="password" className="form-control" placeholder="Password" onChange={this.changePasswordHandler} />
+                                </div>
+                            </div>
+                            <div className="row mb-3">
+                                <div className="d-grid gap-2">
+                                    <button className='btn btn-primary' type='submit'>Login</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <button className = "btn btn-primary col-sm-6" type ="submit">Login</button>
-        
-                </form>
+                </div>
             </div>
         )
     }
