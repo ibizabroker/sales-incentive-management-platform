@@ -50,47 +50,48 @@ class AddSalesman extends Component {
 
   render() {
     return (
-        <div><AdminNavbar />
-        <div className=" container col-sm-6 offset-md-4 mt-5 mb-2">
-            <h2 className="primary"> Add Salesman </h2>
-            <form>
-            <div className="row mb-3">
-                    <label className="col-sm-2 col-form-label">Name:</label>
-                    <div className="col-sm-4">
-                        <input type="text" className ="form-control" id = "name"  name="name" 
-                        value={this.state.name} onChange={this.changeNameHandler}/>
+        <div>
+            <AdminNavbar />
+            <div className = "container mt-5">
+                <div className = "row">
+                    <div className = "card col-md-6 offset-md-3 offset-md-3 mt-2">
+                        <h3 className="text-center mt-4">Add Salesman</h3>
+                        <div className = "card-body">
+                            <form autocomplete="off">
+
+                                <div className = "form-group">
+                                    <label> Name: </label>
+                                    <input type="text" placeholder='Full Name' className ="form-control" id = "name"  name="name" 
+                                        value={this.state.name} onChange={this.changeNameHandler}/>
+                                </div>
+
+                                <div className = "form-group mt-3">
+                                    <label> Username: </label>
+                                    <input type="text" placeholder='UserName' className ="form-control" id = "username"  name="username"
+                                        value={this.state.username} onChange={this.changeUserNameHandler} />
+                                </div>
+
+                                <div className = "form-group mt-3">
+                                    <label> Password: </label>
+                                    <input type="password" placeholder='Password' className ="form-control" id = "password" name="password" 
+                                        value={this.state.password} onChange={this.changePasswordHandler}/>
+                                </div>
+
+                                <div className = "form-group mt-3">
+                                    <label> User Quota: </label>
+                                    <input type="text" placeholder='Quota per month' className ="form-control" id = "userquota"  name="userquota"
+                                        value={this.state.userQuota} onChange={this.changeUserQuotaHandler} />
+                                </div>
+
+                                <div className='text-center'>
+                                    <button className="btn btn-outline-dark btn-info mt-3 addbutton" onClick={this.saveUser}> Add </button>
+                                </div>                                   
+                                
+                            </form>
+                        </div>
                     </div>
-                    
-                </div> 
-                <div className="row mb-3">
-                    <label className="col-sm-2 col-form-label">Username:</label>
-                    <div className="col-sm-4">
-                        <input type="text" className ="form-control" id = "username"  name="username"
-                        value={this.state.username} onChange={this.changeUserNameHandler} />
-                    </div>
-                    
-                </div> 
-                
-                <div className="row mb-3">
-                    <label className="col-sm-2 col-form-label">Password:</label>
-                    <div className="col-sm-4">
-                        <input type="password" className ="form-control" id = "password" name="password" 
-                        value={this.state.password} onChange={this.changePasswordHandler}/>
-                    </div>
-                    
                 </div>
-                <div className="row mb-3">
-                    <label className="col-sm-2 col-form-label">Userquota:</label>
-                    <div className="col-sm-4">
-                        <input type="text" className ="form-control" id = "userquota"  name="userquota"
-                        value={this.state.userQuota} onChange={this.changeUserQuotaHandler} />
-                    </div>
-                    
-                </div> 
-                <button className = "btn btn-primary col-sm-6" onClick={this.saveUser}>Add User</button>
-      
-            </form>
-        </div>
+            </div>
         </div>
     )
   }

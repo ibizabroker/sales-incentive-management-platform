@@ -25,6 +25,7 @@ import Chart from "react-apexcharts";
 const MyCharts = () => {
   const [userAmount, setUserAmount] = useState([]);
   const [userQuota, setUserQuota] = useState([]);
+  const [transactionMonth, setTransactionMonth] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -36,14 +37,19 @@ const MyCharts = () => {
       console.log(data);
       setUserAmount(data?.map((item) => item.userAmount));
       setUserQuota(data?.map((item) => item.userQuota));
+      setTransactionMonth(data?.map((item) => item.transactionMonth));
     } catch (error) {
         console.log(error);
     }
   };
     getData();
   }, []);
+ 
+  const dataPoints = transactionMonth.length;
+  console.log(transactionMonth)
+  console.log(transactionMonth.length)
 
- const series = [ //data on the y-axis
+  const series = [ //data on the y-axis
     {
       name: "User Amount",
       data: userAmount
@@ -52,19 +58,32 @@ const MyCharts = () => {
       data: userQuota
     }
   ];
+
   const options = { //data on the x-axis
-  chart: { id: 'bar-chart'},
-  xaxis: {
-    categories: ["May","August"]
-  }
-};
+    chart: { id: 'bar-chart'},
+    xaxis: {
+      // categories: ["May","August"]
+      categories: transactionMonth,
+      tickAmount: dataPoints
+    },
+    title: {
+      text: 'Graph for Monthly Commission vs Quota',
+      align: 'center',
+      style: {
+        fontFamily: 'Nunito',
+        fontSize: '24px'
+      }
+    }
+  };
+
   return (
-    <div>
+    <div className=''>
       <Chart
         options={options}
         series={series}
-        type="bar"
-        width="450"
+        align='center'
+        type='bar'
+        width='60%'
       />
     </div>
   )

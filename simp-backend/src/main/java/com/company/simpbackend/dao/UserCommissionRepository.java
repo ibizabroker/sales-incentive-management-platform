@@ -71,4 +71,17 @@ public class UserCommissionRepository extends SimpleJpaRepository<UserCommission
 
 	}
 
+	@Transactional
+	@Modifying
+	public void forcedCommission(Integer userId, String transactionMonth, Integer userAmount) {
+
+		Query q = entityManager.createNativeQuery(
+				"UPDATE user_commission AS uc\n" +
+				"SET uc.user_amount = "+userAmount+"\n" +
+				"WHERE uc.user_id = "+userId+" AND uc.transaction_month= "+transactionMonth, UserCommission.class);
+		System.out.println(q);
+		q.executeUpdate();
+
+	}
+
 }

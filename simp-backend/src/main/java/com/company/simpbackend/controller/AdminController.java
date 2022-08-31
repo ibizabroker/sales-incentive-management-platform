@@ -75,15 +75,10 @@ public class AdminController {
         return ResponseEntity.ok(updatedUser);
     }
 
-    @PutMapping("/update-commission")
+    @GetMapping("/forced-commission")
 //  @PreAuthorize("hasRole('Admin')")
-    public ResponseEntity<UserCommission> updateUser( Integer userId, String transactionMonth,  @RequestBody UserCommission commissionDetails) {
-        UserCommission commission = userCommissionRepository.findById(userId).orElseThrow(() -> new NotFoundException("User with id "+ userId +" does not exist."));
-
-        commission.setUserAmount(commissionDetails.getUserAmount());
-
-        UserCommission updatedCommission = userCommissionRepository.save(commission);
-        return ResponseEntity.ok(updatedCommission);
+    public void forcedCommission(Integer userId, String transactionMonth, Integer userAmount) {
+        userCommissionRepository.forcedCommission(userId, transactionMonth, userAmount);
     }
     
     @PostMapping("/addsalesdetails")
