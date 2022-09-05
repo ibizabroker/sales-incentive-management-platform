@@ -27,9 +27,9 @@ export default class SalesmanList extends Component {
         
 
         <div className='container mt-3 mb-2' >
-          <h2 className="text-center">User List</h2>
+          <h2 className="text-center head">User List</h2>
           <div className = "row">
-                        <table className = "table table-striped table-bordered">
+                        <table className = "table table-dark table-striped table-bordered">
 
                             <thead>
                                 <tr>

@@ -25,9 +25,9 @@ export default class UserCommission extends Component {
         <div>
           <UserNavbar />  
           <div className='container mt-3 mb-2' >
-            <h2 className="text-center">Commission</h2>
+            <h2 className="text-center head">Commission</h2>
             <div className = "row">
-                          <table className = "table table-striped table-bordered">
+                          <table className = "table table-dark table-striped table-bordered">
   
                               <thead>
                                   <tr>
