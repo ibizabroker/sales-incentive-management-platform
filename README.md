@@ -124,6 +124,8 @@ Creating a solution for a customer which is a big player in the Vehicles sales. 
 * pType
 * commissionPercentage
 
+<br>
+
 # APIs
 
 ## Authenticate
@@ -219,8 +221,7 @@ Creating a solution for a customer which is a big player in the Vehicles sales. 
 <br>
 
 # Demo
-
-
+https://user-images.githubusercontent.com/70258012/188926718-c1980ceb-239f-4c1b-848e-5da0af999ebe.mp4
 
 <br>
 
@@ -233,6 +234,8 @@ spring.datasource.username = yourUsername
 spring.datasource.password = yourPassword
 ```
 
+<br>
+
 # Development
 * Frontend
 ```
@@ -243,10 +246,12 @@ npm install
 mvn install
 ```
 
+<br>
+
 # Build
 * Frontend
 ```
-ng serve
+npm start
 ```
 
 * Backend
