@@ -76,3 +76,20 @@
   margin-bottom:12%;
   color:#fff;
 }
+
+.head {
+  color: black;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}

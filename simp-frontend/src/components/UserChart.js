@@ -60,7 +60,12 @@ const MyCharts = () => {
   ];
 
   const options = { //data on the x-axis
-    chart: { id: 'bar-chart'},
+    chart: { 
+      id: 'bar-chart',
+      toolbar: {
+        show: false
+      }
+    },
     xaxis: {
       // categories: ["May","August"]
       categories: transactionMonth,
@@ -73,6 +78,9 @@ const MyCharts = () => {
         fontFamily: 'Nunito',
         fontSize: '24px'
       }
+    },
+    tooltip: {
+      theme: 'dark'
     }
   };
 

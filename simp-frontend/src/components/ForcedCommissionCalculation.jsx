@@ -57,7 +57,7 @@ export default class ForcedCommissionCalculation extends Component {
                 <AdminNavbar />
                 <div className = "container mt-4">
                     <div className = "row">
-                        <div className = "card border-0 col-md-6 offset-md-3 offset-md-3 mt-2">
+                        <div className = "card bg-dark border-0 col-md-6 offset-md-3 offset-md-3 mt-2">
                             <h3 className="text-center mt-4">Forced Commission</h3>
                             <div className = "card-body">
                                 <form autocomplete="off">

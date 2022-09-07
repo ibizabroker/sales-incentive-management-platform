@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import UserService from '../services/UserService'
 import { withRouter } from '../services/withRouter'
 
@@ -8,10 +8,12 @@ class LogIn extends Component {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            errMsg: ''
         }
-        // this.changeUserameHandler = this.changeUserameHandler.bind(this);
-        // this.changePasswordHandler = this.changePasswordHandler.bind(this);
+        
+        this.userRef = createRef();
+        this.errRef = createRef();
 
         this.changeUsernameHandler= (event) => {
             this.setState({username: event.target.value});
@@ -44,8 +46,24 @@ class LogIn extends Component {
                     this.props.router.navigate(`/user/allsales`);
                 }
             })
-            .catch(err => console.log(err))
+            .catch ((err) => {
+                if (err.response?.status === 401) {
+                    this.setState({ errMsg: 'Check Username or Password' });
+                }
+                this.errRef.current.focus();
+            })
     
+        }
+    }
+
+    componentDidMount() {
+        this.userRef.current.focus();
+        this.setState({ errMsg: '' });
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.username !== prevState.username || this.state.password !== prevState.password) {
+            this.setState({ errMsg: '' });
         }
     }
 
@@ -55,15 +73,29 @@ class LogIn extends Component {
                 <div className="row">
                     <div className="col-md-12 login-form">
                         <h3>Login</h3>
+                        <p ref={this.errRef} className={this.state.errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{this.state.errMsg}</p>
                         <form onSubmit={this.handleSubmit}>
                             <div className="row mb-3">
                                 <div className="col-md-12 form-group">
-                                <input type="text" className="form-control" placeholder="Username" onChange={this.changeUsernameHandler} />
+                                <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    placeholder="Username" 
+                                    onChange={this.changeUsernameHandler} 
+                                    ref={this.userRef}
+                                    value={this.state.username}
+                                />
                                 </div>
                             </div>
                             <div className="row mb-3">
                                 <div className="col-md-12 form-group">
-                                <input type="password" className="form-control" placeholder="Password" onChange={this.changePasswordHandler} />
+                                <input 
+                                    type="password" 
+                                    className="form-control" 
+                                    placeholder="Password" 
+                                    onChange={this.changePasswordHandler} 
+                                    value={this.state.password}
+                                />
                                 </div>
                             </div>
                             <div className="row mb-3">

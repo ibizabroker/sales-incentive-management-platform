@@ -54,7 +54,7 @@ class AddSalesman extends Component {
             <AdminNavbar />
             <div className = "container mt-5">
                 <div className = "row">
-                    <div className = "card col-md-6 offset-md-3 offset-md-3 mt-2">
+                    <div className = "card col-md-6 offset-md-3 offset-md-3 mt-2 bg-dark">
                         <h3 className="text-center mt-4">Add Salesman</h3>
                         <div className = "card-body">
                             <form autocomplete="off">

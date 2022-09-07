@@ -29,9 +29,9 @@ class CommissionStructureList extends Component {
         <AdminNavbar />
 
         <div className='container mt-4 mb-5'>
-        <h2 className="text-center">Commission Structure</h2>
+        <h2 className="text-center head">Commission Structure</h2>
         <div className = "row">
-               <table className = "table table-striped table-bordered">
+               <table className = "table table-dark table-striped table-bordered">
 
                    <thead>
                        <tr>
@@ -40,7 +40,7 @@ class CommissionStructureList extends Component {
                            <th>Upper Limit</th>
                            <th>Lower Limit</th>
                            <th> Commission</th>
-                           
+                           <th>Action</th>
                        </tr>
                    </thead>
                    <tbody>

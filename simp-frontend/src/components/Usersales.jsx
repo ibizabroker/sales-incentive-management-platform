@@ -40,16 +40,16 @@ export default class Usersales extends Component {
         <UserNavbar />
         <div className='container mt-4'>
           <form onSubmit={this.handleSubmit}>
-            <label htmlFor="month">Select Month : </label>
+            <label className='head' htmlFor="month">Select Month : </label>
             <input type="month" className='btn btn-sm btn-outline-primary ms-2 me-2' value={this.state.transactionMonth} onChange={this.handleChange}/>
             <button className='btn btn-sm btn-primary' type="submit">Submit</button>
           </form> 
         </div>
         
         <div className='container mt-3 mb-2' >
-          <h2 className="text-center"> My Sales Details</h2>
+          <h2 className="text-center head"> My Sales Details</h2>
           <div className = "row">
-            <table className = "table table-striped table-bordered">
+            <table className = "table table-dark table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>User Id</th>
